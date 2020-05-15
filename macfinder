@@ -1,0 +1,84 @@
+#!/usr/bin/python3
+import sys
+from process import *
+def __banner__():
+    print("""\u001b[32m
+╔═╗╔═╗╔═══╗╔═══╗ ╔═══╗╔══╗╔═╗─╔╗╔═══╗╔═══╗╔═══╗
+║║╚╝║║║╔═╗║║╔═╗║ ║╔══╝╚╣─╝║║╚╗║║╚╗╔╗║║╔══╝║╔═╗║
+║╔╗╔╗║║║─║║║║─╚╝ ║╚══╗─║║─║╔╗╚╝║─║║║║║╚══╗║╚═╝║
+║║║║║║║╚═╝║║║─╔╗ ║╔══╝─║║─║║╚╗║║─║║║║║╔══╝║╔╗╔╝
+║║║║║║║╔═╗║║╚═╝║ ║║───╔╣─╗║║─║║║╔╝╚╝║║╚══╗║║║╚╗
+╚╝╚╝╚╝╚╝─╚╝╚═══╝ ╚╝───╚══╝╚╝─╚═╝╚═══╝╚═══╝╚╝╚═╝\u001b[0m""")
+def __help1__():
+    print("Usage:")
+    print("         python3 findmac <MAC>")
+    print()
+try:
+    b=sys.argv[1]
+except:
+    __help1__()
+def mac(A,b):
+    _op3_=""
+    for i in A:
+        if b.upper() in A[i]:
+            _op1_=b1[0:2]+":"+b1[2:4]+":"+b1[4:6]
+            _op3_=str(A[i])
+            _op3_=_op3_[7:]
+            _print_(_op1_,_op2_,_op3_)
+    if _op3_ == "":
+        print("[\u001b[33;1m!\u001b[0m] Not Found !")
+def _print_(_op1_,_op2_,_op3_):
+    __banner__()
+    __len__=len(_op3_)
+    _min_="-"
+    _spc_=" "
+    _spc_*=__len__
+    _min_*=__len__
+    _op_="\u001b[32m"+_op1_+"\u001b[0m"+_op2_
+    print("""+-------------------+----------{__min__}-+
+|        \u001b[31;1mMac\u001b[0m        |     \u001b[31;1mVendor\u001b[0m{__spc__}|
++-------------------+----------{__min__}-+
+| {:^19} |  {}         |
++-------------------+----------{__min__}-+""".format(_op_,_op3_,__min__=_min_,__spc__=_spc_,__Len__=int(__len__)))
+
+def __help2__():
+    print("""
+Macfinder shows vendor  of Mac address  
+
+Usage:
+        python3 macfinder <MAC>
+
+Args:
+        -a  --about    About
+
+        -h  --help     This banner
+
+            """)
+def __about__():
+    __banner__()
+    print("""
+-------------({G}INFO{N})---------------
+[{R}*{N}] Name    : Macfinder
+[{R}*{N}] Code    : {G}Python3.7{N}
+[{R}*{N}] Verssion: {G}v1.2{N}
+[{R}*{N}] Auther  : Madhava
+[{R}*{N}] Org     : {R}Red-5-crackers{N}
+[{R}*{N}] Link    : {G1}https://git.io/JvAiL{N}
+----------------------------------
+            """.format(R="\u001b[31m",N="\u001b[0m",G="\u001b[32m",G1="\u001b[32;4;1m"))
+try:
+    if len(b) == 17:
+        b=b.split(":")
+        b="".join(b)
+        b1=b[0:6]
+        b2=b[6:13]
+        _op2_=":"+b2[0:2]+":"+b2[2:4]+":"+b2[4:6]
+        mac(A,b1)
+    elif len(b) != 17 and b != "" and b != "-h" and b != "--help" and b != "--about" and b != "-a":
+        print("\u001b[32;1mOops..!.\u001b[0m Invalied Address [ \u001b[31;1m{}\u001b[0m ]".format(b))
+    if b == "" or b == "-h" or b == "--help":
+        __help2__()
+    if b == "-a" or b == "--about":
+        __about__()
+except:
+    pass

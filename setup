@@ -15,17 +15,17 @@ python3 -c "print(u'\u001b[32;1m')"
 echo "What's the thing inside setup ?"
 sleep 1.3
 cat setup
-chmod +x thirukka
+chmod +x macfinder
 function Termux(){
   if [ -e /data/data/com.termux/files/usr/bin/macfinder ]
 	then
 		cp macfinder /data/data/com.termux/files/usr/bin/macfinder
-    chmod +x /data/data/com.termux/files/usr/bin/macfinder	
+    		chmod +x /data/data/com.termux/files/usr/bin/macfinder	
 	else
 		cp macfinder /data/data/com.termux/files/usr/bin/macfinder
 		chmod +x /data/data/com.termux/files/usr/bin/macfinder
 		chmod +x macfinder
-    cp process.py /data/data/com.termux/files/usr/bin/prosses.py
+    		cp process.py /data/data/com.termux/files/usr/bin/process.py
 	fi
 	if [ -e /data/data/com.termux/files/usr/bin/python3 ]
 	then
@@ -38,15 +38,15 @@ function Termux(){
 function Linux(){
 	if [ -e /usr/bin/macfinder ]
 	then 
-		chmod +x thirukka
-    cp macfinder /usr/bin/macfinder
-    chmod +x /usr/bin/macfinder
-    cp process.py /usr/bin/macfinder
+		chmod +x macfinder
+    		cp macfinder /usr/bin/macfinder
+    		chmod +x /usr/bin/macfinder
+    		cp process.py /usr/bin/process.py
 	else
-    chmod +x thirukka
-    cp macfinder /usr/bin/macfinder
-    chmod +x /usr/bin/macfinder
-    cp process.py /usr/bin/macfinder		
+    		chmod +x macfinder
+    		cp macfinder /usr/bin/macfinder
+    		chmod +x /usr/bin/macfinder
+    		cp process.py /usr/bin/process.py		
 	fi
 }
 function Main(){

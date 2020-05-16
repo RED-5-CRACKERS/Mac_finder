@@ -7,15 +7,19 @@ chmod +x macfinder
 function Termux(){
   if [ -e /data/data/com.termux/files/usr/share/macfinder/macfinder ]
 	then
-		cp macfinder /data/data/com.termux/files/usr/share/macfinder/bin/macfinder
-    		chmod +x /data/data/com.termux/files/usr/share/macfinder/macfinder	
+		mkdir /data/data/com.termux/files/usr/share/macfinder/
+		cp macfinder /data/data/com.termux/files/usr/share/macfinder/macfinder
+		chmod +x /data/data/com.termux/files/usr/share/macfinder/macfinder
+		chmod +x macfinder
+    		cp process.py /data/data/com.termux/files/usr/share/macfinder/process.py
+		echo "cd /data/data/com.termux/files/usr/share/macfinder/ && ./macfinder '$@'"
 	else
 		mkdir /data/data/com.termux/files/usr/share/macfinder/
 		cp macfinder /data/data/com.termux/files/usr/share/macfinder/macfinder
 		chmod +x /data/data/com.termux/files/usr/share/macfinder/macfinder
 		chmod +x macfinder
     		cp process.py /data/data/com.termux/files/usr/share/macfinder/process.py
-		echo "cd /data/data/com.termux/files/usr/share/macfinder/ && ./macfinder"
+		echo "cd /data/data/com.termux/files/usr/share/macfinder/ && ./macfinder '$@'" > /data/data/com.termux/files/usr/bin/macfinder
 	fi
 	if [ -e /data/data/com.termux/files/usr/bin/python3 ]
 	then
@@ -28,14 +32,14 @@ function Termux(){
 function Linux(){
 	if [ -e /usr/share/macfinder ]
 	then 
-		chmod +x macfinder
+		echo "cd /usr/share/macfinder/ && ./macfinder '$@'" > /use/bin/macfinder
+		mkdir /usr/share/macfinder
     		cp macfinder /usr/share/macfinder/macfinder
     		chmod +x /usr/share/macfinder/macfinder
     		cp process.py /usr/share/macfinder/process.py
 	else
-		echo "cd /usr/share/macfinder/ && ./macfinder" > /use/bin/macfinder
+		echo "cd /usr/share/macfinder/ && ./macfinder '$@'" > /use/bin/macfinder
 		mkdir /usr/share/macfinder
-    		chmod +x macfinder
     		cp macfinder /usr/share/macfinder/macfinder
     		chmod +x /usr/share/macfinder/macfinder
     		cp process.py /usr/share/macfinder/process.py		

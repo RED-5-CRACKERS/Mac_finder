@@ -2,8 +2,6 @@
 Finds vendors of Mac
 #
 
-```chmod +x macfinder```
-
+```git clone https://github.com/RED-5-CRACKERS/Mac_finder.git && cd Mac_finder && chmod +x setup.sh && ./setup.sh```
+# ☝️😁 Copy and past
 #
-
-```./macfinder```

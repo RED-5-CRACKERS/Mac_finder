@@ -12,7 +12,7 @@ function Termux(){
 		chmod +x /data/data/com.termux/files/usr/share/macfinder/macfinder
 		chmod +x macfinder
     		cp process.py /data/data/com.termux/files/usr/share/macfinder/process.py
-		echo 'cd /data/data/com.termux/files/usr/share/macfinder/ && ./macfinder "$@" > /data/data/com.termux/files/usr/bin/macfinder
+		echo 'cd /data/data/com.termux/files/usr/share/macfinder/ && ./macfinder "$@"' > /data/data/com.termux/files/usr/bin/macfinder
 		chmod +x /data/data/com.termux/files/usr/bin/macfinder
 	else
 		mkdir /data/data/com.termux/files/usr/share/macfinder/

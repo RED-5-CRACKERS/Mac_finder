@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import sys
+from sys import argv as __Arg__
 from process import *
 def __banner__():
     print("""\u001b[32m
@@ -14,7 +14,7 @@ def __help1__():
     print("         python3 findmac <MAC>")
     print()
 try:
-    b=sys.argv[1]
+    b=__Arg__[1]
 except:
     __help1__()
 def mac(A,b):
@@ -75,9 +75,20 @@ try:
         mac(A,b1)
     elif len(b) != 17 and b != "" and b != "-h" and b != "--help" and b != "--about" and b != "-a":
         print("\u001b[32;1mOops..!\u001b[0m, Invalied Address [ \u001b[31;1m{}\u001b[0m ]".format(b))
-    if b == "" or b == "-h" or b == "--help":
-        __help2__()
-    if b == "-a" or b == "--about":
-        __about__()
 except:
     pass
+def __opt__(b):
+    if b == "-a" or b == "--about":
+        __about__()
+    if b == "" or b == "-h" or b == "--help":
+        __help2__()
+    
+try:
+    if __Arg__[2] != None:
+        __opt__(__Arg__[2])
+        __opt__(b)
+except:
+    try:
+        __opt__(b)
+    except:
+        pass

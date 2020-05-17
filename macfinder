@@ -85,8 +85,8 @@ def __opt__(b):
     
 try:
     if __Arg__[2] != None:
-        __opt__(__Arg__[2])
         __opt__(b)
+        __opt__(__Arg__[2])
 except:
     try:
         __opt__(b)

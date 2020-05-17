@@ -11,7 +11,7 @@ def __banner__():
 ╚╝╚╝╚╝╚╝─╚╝╚═══╝ ╚╝───╚══╝╚╝─╚═╝╚═══╝╚═══╝╚╝╚═╝\u001b[0m""")
 def __help1__():
     print("Usage:")
-    print("         python3 findmac <MAC>")
+    print("         python3 macfinder [-h] [-a] <MACID>")
     print()
 try:
     b=__Arg__[1]
@@ -45,7 +45,7 @@ def __help2__():
 Macfinder shows vendor  of Mac address  
 
 Usage:
-        python3 macfinder <MAC_ID> [-h]  
+        macfinder [-h] [-a] <MAC_ID>  
 
 Args:
         -a  --about    About

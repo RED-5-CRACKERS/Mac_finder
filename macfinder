@@ -28,7 +28,6 @@ def mac(A,b):
     if _op3_ == "":
         print("[\u001b[33;1m!\u001b[0m] Not Found !")
 def _print_(_op1_,_op2_,_op3_):
-    __banner__()
     __len__=len(_op3_)
     _min_="-"
     _spc_=" "
@@ -46,7 +45,7 @@ def __help2__():
 Macfinder shows vendor  of Mac address  
 
 Usage:
-        python3 macfinder <MAC>
+        python3 macfinder <MAC_ID> [-h]  
 
 Args:
         -a  --about    About
@@ -75,7 +74,7 @@ try:
         _op2_=":"+b2[0:2]+":"+b2[2:4]+":"+b2[4:6]
         mac(A,b1)
     elif len(b) != 17 and b != "" and b != "-h" and b != "--help" and b != "--about" and b != "-a":
-        print("\u001b[32;1mOops..!.\u001b[0m Invalied Address [ \u001b[31;1m{}\u001b[0m ]".format(b))
+        print("\u001b[32;1mOops..!\u001b[0m, Invalied Address [ \u001b[31;1m{}\u001b[0m ]".format(b))
     if b == "" or b == "-h" or b == "--help":
         __help2__()
     if b == "-a" or b == "--about":

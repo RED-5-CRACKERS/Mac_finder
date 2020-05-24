@@ -42,17 +42,20 @@ def _print_(_op1_,_op2_,_op3_):
 
 def __help2__():
     print("""
-Macfinder shows vendor  of Mac address  
+Macfinder shows vendor  of  The Mac address  
 
-Usage:
-        macfinder [-h] [-a] <MAC_ID>  
+\u001b[31;4mUsage\u001b[0m:
+        macfinder \u001b[2;1m[-h] [-a] \u001b[0m<MAC_ID>  
 
-Args:
+\u001b[31;4mArgs\u001b[0m:
         -a  --about    About
 
-        -h  --help     This banner
+       \u001b[2;1m -h  --help\u001b[0m     This banner
 
-            """)
+       \u001b[2;1mIt Find the given mac address's vendor only.But not the hole divice's model.Mac address is the six pares of Two value are seperated by a colen.For example 'd0:67:e5:17:6A:51' like this.In Mac address the first three pare is denote as The vendor of the mac address.
+
+\u001b[34;1mFrom ::: Red-5-crackers ::: https://github.com/RED-5-CRACKERS/Mac_finder.git\u001b[0m 
+""")
 def __about__():
     __banner__()
     print("""

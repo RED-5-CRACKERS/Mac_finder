@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 from sys import argv as __Arg__
 from process import *
-def __banner__():
+VERSSION="v1.0.4"
+def __banner__(v):
     print("""\u001b[32m
 ╔═╗╔═╗╔═══╗╔═══╗ ╔═══╗╔══╗╔═╗─╔╗╔═══╗╔═══╗╔═══╗
 ║║╚╝║║║╔═╗║║╔═╗║ ║╔══╝╚╣─╝║║╚╗║║╚╗╔╗║║╔══╝║╔═╗║
 ║╔╗╔╗║║║─║║║║─╚╝ ║╚══╗─║║─║╔╗╚╝║─║║║║║╚══╗║╚═╝║
 ║║║║║║║╚═╝║║║─╔╗ ║╔══╝─║║─║║╚╗║║─║║║║║╔══╝║╔╗╔╝
 ║║║║║║║╔═╗║║╚═╝║ ║║───╔╣─╗║║─║║║╔╝╚╝║║╚══╗║║║╚╗
-╚╝╚╝╚╝╚╝─╚╝╚═══╝ ╚╝───╚══╝╚╝─╚═╝╚═══╝╚═══╝╚╝╚═╝\u001b[0m""")
+╚╝╚╝╚╝╚╝─╚╝╚═══╝ ╚╝───╚══╝╚╝─╚═╝╚═══╝╚═══╝╚╝╚═╝\u001b[0m
+...:::::::::::[\u001b[41mPython Mac Finder\u001b[0m]:::::::::::...  (\u001b[33;1m{}\u001b[0m)""".format(v))
 def __help1__():
     print("Usage:")
     print("         python3 macfinder [-h] [-a] <MACID>")
@@ -40,7 +42,8 @@ def _print_(_op1_,_op2_,_op3_):
 | {:^19} |  {}         |
 +-------------------+----------{__min__}-+""".format(_op_,_op3_,__min__=_min_,__spc__=_spc_,__Len__=int(__len__)))
 
-def __help2__():
+def __help2__(v):
+    __banner__(v)
     print("""
 Macfinder shows vendor  of  The Mac address  
 
@@ -56,18 +59,46 @@ Macfinder shows vendor  of  The Mac address
 
 \u001b[34;1mFrom ::: Red-5-crackers ::: https://github.com/RED-5-CRACKERS/Mac_finder.git\u001b[0m 
 """)
-def __about__():
-    __banner__()
+def __about__(v):
+    __banner__(v)
     print("""
 -------------({G}INFO{N})---------------
 [{R}*{N}] Name    : Macfinder
 [{R}*{N}] Code    : {G}Python3.7{N}
-[{R}*{N}] Verssion: {G}v1.2{N}
+[{R}*{N}] Verssion: ({Y}{V}{N})
 [{R}*{N}] Auther  : Madhava
 [{R}*{N}] Org     : {R}Red-5-crackers{N}
 [{R}*{N}] Link    : {G1}https://git.io/JvAiL{N}
 ----------------------------------
-            """.format(R="\u001b[31m",N="\u001b[0m",G="\u001b[32m",G1="\u001b[32;4;1m"))
+            """.format(R="\u001b[31m",N="\u001b[0m",Y="\u001b[33;1m",G="\u001b[32m",G1="\u001b[32;4;1m",V=v))
+if True:
+    try:
+        if len(b)==12:
+            b=list(b)
+            b.insert(2,":")
+            b.insert(5,":")
+            b.insert(8,":")
+            b.insert(-5,":")
+            b.insert(-2,":")
+            b="".join(b)
+        if len(b)==17:
+            if "-" in list(b):
+                b=b.replace("-",":")
+            if " " in list(b):
+                b=b.replace(" ",":")
+        if len(b)==6:
+            b=list(b)
+            b.insert(2,":")
+            b.insert(5,":")
+            b="".join(b)+":00:00:00"
+        if len(b)==8:
+            if ":" in list(b):
+                pass
+            if "-" in list(b):
+                b=b.replace("-",":")
+            b=b+":00:00:00"
+    except:
+        pass
 try:
     if len(b) == 17:
         b=b.split(":")
@@ -80,18 +111,17 @@ try:
         print("\u001b[32;1mOops..!\u001b[0m, Invalied Address [ \u001b[31;1m{}\u001b[0m ]".format(b))
 except:
     pass
-def __opt__(b):
+def __opt__(b,v):
     if b == "-a" or b == "--about":
-        __about__()
+        __about__(v)
     if b == "" or b == "-h" or b == "--help":
-        __help2__()
-    
+        __help2__(v)
 try:
     if __Arg__[2] != None:
         __opt__(b)
         __opt__(__Arg__[2])
 except:
     try:
-        __opt__(b)
+        __opt__(b,VERSSION)
     except:
         pass

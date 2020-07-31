@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/bin/python3
 from sys import argv as __Arg__
 from process import *
 VERSSION="v1.0.4"
